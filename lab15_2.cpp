@@ -47,8 +47,7 @@ void findColSum(const double * dPtr,double * result,int N,int M){
 
 void showData(double * data,int N,int M){
 	for(int i=0;i<N*M;i++){
-		if(i%M==0)	cout << "\n";
 		cout << *(data+i) << "  ";
+		if((i+1)%M==0)	cout << "\n";
 	}
-	cout << "\n";
 }
