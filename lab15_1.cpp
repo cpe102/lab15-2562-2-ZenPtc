@@ -25,3 +25,29 @@ int main(){
 }
 
 //Write definition of randData(), showData() and findRowSum()
+void randData(double * dPtr,int N,int M){
+	for(int i=0;i<N*M;i++){
+		*(dPtr+i) = (rand()%101)/100.0;
+	}
+}
+
+void findRowSum(const double * dPtr,double * result,int N,int M){
+	double sum=0;
+	int count=0;
+	for(int i=0;i<N*M;i++){
+		sum += *(dPtr+i);
+		if((i+1)%M==0){
+			result[count] = sum;
+			sum = 0 ;
+			count++;
+		}
+	}
+}
+
+void showData(double * data,int N,int M){
+	for(int i=0;i<N*M;i++){
+		if(i%M==0)	cout << "\n";
+		cout << *(data+i) << "  ";
+	}
+	cout << "\n";
+}
